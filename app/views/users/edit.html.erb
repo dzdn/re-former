@@ -1,3 +1,15 @@
+<% if @user.errors.any? %>
+    <div>
+        <%= pluralize(@user.errors.count, "error") %> prevented this article from being saved.
+        <ul>
+            <% @user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+
+
 <%= form_with model: @user do |form| %>
     <%= form.text_field :username %>
     <%= form.email_field :email %>

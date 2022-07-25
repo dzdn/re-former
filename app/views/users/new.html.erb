@@ -1,0 +1,15 @@
+<!--
+<form action="/users" method="post" accept-charset="UTF-8">
+    <input name="user[username]" type="text">
+    <input name="user[email]" type="email">
+    <input name="user[password]" type="password">
+    <input type="submit" value="Create">
+</form>
+-->
+
+<%= form_with model: @user do |form| %>
+    <%= form.text_field :username %>
+    <%= form.email_field :email %>
+    <%= form.password_field :password %>
+    <%= form.submit %>
+<% end %>
